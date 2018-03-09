@@ -1,1 +1,4 @@
 dist
+/tool/nginx-1.13.0/logs/access.log
+/tool/nginx-1.13.0/logs/error.log
+/tool/nginx-1.13.0/logs/nginx.pid
