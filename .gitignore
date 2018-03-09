@@ -2,3 +2,9 @@ dist
 /tool/nginx-1.13.0/logs/access.log
 /tool/nginx-1.13.0/logs/error.log
 /tool/nginx-1.13.0/logs/nginx.pid
+/tool/nginx-1.13.0/temp/client_body_temp
+/tool/nginx-1.13.0/temp/fastcgi_temp
+/tool/nginx-1.13.0/temp/proxy_temp
+/tool/nginx-1.13.0/temp/scgi_temp
+/tool/nginx-1.13.0/temp/uwsgi_temp
+/.vscode/settings.json
