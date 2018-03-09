@@ -1,5 +1,6 @@
-copy .\src\*.html .\dist
-copy .\src\*.js .\dist
+mkdir dist
+copy .\src\*.html .\dist\
+copy .\src\*.js .\dist\
 
 SET ExpFuncs="['_main','_as_test']"
 

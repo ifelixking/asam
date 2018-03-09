@@ -1,1 +1,2 @@
 dist
+/tool/nginx-1.13.0/logs/*
