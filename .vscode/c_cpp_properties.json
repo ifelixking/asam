@@ -57,6 +57,7 @@
                 "${workspaceRoot}"
             ],
             "defines": [
+                "__EMSCRIPTEN__",
                 "__EMSCRIPTEN_major__=1",
                 "__EMSCRIPTEN_minor__=37",
 				"__EMSCRIPTEN_tiny__=32",

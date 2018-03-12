@@ -8,10 +8,18 @@
 	<script src="as.js"></script>
 </head>
 <body>
+	<button onclick="test()">test</button>
 	<script>
 		Module["onRuntimeInitialized"] = function(){
-			console.log(Module._as_test());
+			
+			// console.log(Module);
 		}
+
+		function test(){
+			var a = Module["_as_test"]();
+			console.log(a);
+		}
+
 	</script>
 </body>
 </html>

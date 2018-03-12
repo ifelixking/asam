@@ -1,20 +1,26 @@
 #include <stdio.h>
-#include <GLES2/gl2.h>
-#include <EGL/egl.h>
+// #include <vector>
 
 extern "C" {
 
 int main()
 {
-	printf("--ASAM--\n");
+	// printf("--ASAM--\n");
 }
 
 int as_test()
 {
-	return 3389;
-}
+	// std::vector<int> vec;
+	// vec.push_back(1);
+	// vec.push_back(2);
+	// int result = (int)vec.size();
+	int a = 33;
+	return a;
 
-void as_test_render_init() {}
-void as_test_render() {}
+	// int a = 1;
+	// int b = 2;
+	// int c = a + b;
+	// return c;
+}
 
 }
