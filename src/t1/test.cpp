@@ -7,6 +7,8 @@
 #include  <X11/Xlib.h>
 #include  <X11/Xatom.h>
 #include  <X11/Xutil.h>
+#include <emscripten/html5.h>
+#include <emscripten.h>
 
 struct ESContext
 {
@@ -221,24 +223,38 @@ void Draw(ESContext * context){
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-ESContext context;
+// ESContext context;
 
 extern "C" {
 
-void as_test_render_init() {
-	esCreateWindow(&context, "hello", 320, 240, CWF_WINDOW_RGB);
-	if(!Init(&context)){ return; }
-	context.drawFunc = Draw;
-}
-void as_test_render() {
+void EMSCRIPTEN_KEEPALIVE as_test_render_init() {
+	// esCreateWindow(&context, "hello", 320, 240, CWF_WINDOW_RGB);
+	// if(!Init(&context)){ return; }
+	// context.drawFunc = Draw;
 
-	if (context.updateFunc != NULL){
-		context.updateFunc(&context, 30);
-	}
-	if (context.drawFunc != NULL){
-		context.drawFunc(&context);
-	}
-	eglSwapBuffers(context.eglDisplay, context.eglSurface);
+	EmscriptenWebGLContextAttributes attribs;
+	emscripten_webgl_init_context_attributes(&attribs);
+	attribs.alpha = false;
+	attribs.enableExtensionsByDefault = false;
+
+	EMSCRIPTEN_WEBGL_CONTEXT_HANDLE context = emscripten_webgl_create_context("canvas1", &attribs);
+	emscripten_webgl_make_context_current(context);
+
+	glClearColor(0.f, 1.f, 0.f, 0.f);
+
+}
+void EMSCRIPTEN_KEEPALIVE as_test_render() {
+
+	glViewport(0, 0, 320, 240);
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	// if (context.updateFunc != NULL){
+	// 	context.updateFunc(&context, 30);
+	// }
+	// if (context.drawFunc != NULL){
+	// 	context.drawFunc(&context);
+	// }
+	// eglSwapBuffers(context.eglDisplay, context.eglSurface);
 }
 
 }

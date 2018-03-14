@@ -9,6 +9,10 @@
 </head>
 <body>
 	<button onclick="test()">test</button>
+	<button id="callback">callback</button>	
+	<canvas id="canvas1" style="width:320px;height:240px"></canvas>
+	<button onclick="init()">init</button>	
+	<button onclick="draw()">draw</button>
 	<script>
 		Module["onRuntimeInitialized"] = function(){
 			
@@ -18,6 +22,14 @@
 		function test(){
 			var a = Module["_as_test"]();
 			console.log(a);
+		}
+
+		function init(){
+			Module["_as_test_render_init"]();
+		}
+
+		function draw(){
+			Module["_as_test_render"]();
 		}
 
 	</script>
