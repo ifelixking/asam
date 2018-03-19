@@ -4,10 +4,10 @@
 
 extern "C" {
 
-int main()
-{
-	// printf("--ASAM--\n");
-}
+// int main()
+// {
+// 	// printf("--ASAM--\n");
+// }
 
 EM_BOOL cbMouse(int eventType, const EmscriptenMouseEvent *mouseEvent, void *userData){
 	printf("eventType: %d\n", eventType);

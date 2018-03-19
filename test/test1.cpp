@@ -129,14 +129,14 @@ GLboolean esCreateWindow(ESContext * context, const char * title, int width, int
 }
 
 //#define BUFSIZ  512
-void esLogMessage(const char * formatStr, ...){
-	va_list params;
-	char buf[BUFSIZ];
-	va_start(params, formatStr);
-	vsprintf(buf, formatStr, params);
-	printf("%s", buf);
-	va_end(params);
-}
+// void esLogMessage(const char * formatStr, ...){
+// 	va_list params;
+// 	char buf[BUFSIZ];
+// 	va_start(params, formatStr);
+// 	vsprintf(buf, formatStr, params);
+// 	printf("%s", buf);
+// 	va_end(params);
+// }
 
 GLuint LoadShader(GLenum type, const char * shaderSrc){
 	GLuint shader = glCreateShader(type);
@@ -150,7 +150,7 @@ GLuint LoadShader(GLenum type, const char * shaderSrc){
 		if (infoLen > 1){
 			char * infoLog = (char *)malloc(sizeof(char) * infoLen);
 			glGetShaderInfoLog(shader, infoLen, NULL, infoLog);
-			esLogMessage("Error compiling shader:\n%s\n", infoLog);
+			//esLogMessage("Error compiling shader:\n%s\n", infoLog);
 			free(infoLog);
 		}
 		glDeleteShader(shader);
@@ -189,7 +189,7 @@ int Init(ESContext * context){
 		if (infoLen > 1) {
 			char *infoLog = (char *)malloc(sizeof(char) * infoLen);
 			glGetProgramInfoLog(programObject, infoLen, NULL, infoLog);
-			esLogMessage("Error linking program:\n%s\n", infoLog);
+			//esLogMessage("Error linking program:\n%s\n", infoLog);
 			free(infoLog);
 		}
 		glDeleteProgram(programObject);
