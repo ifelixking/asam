@@ -3,9 +3,10 @@
 namespace Asam {
 
 	class Scene{
+	public:
 		virtual ~Scene();
 	
-		virtual void Render() = 0;
+		virtual void Render(class Camera * camera) = 0;
 	};
 
 }

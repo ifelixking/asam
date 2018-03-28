@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef STDAFX
-#include "../../stdafx.h"
+#include "../../../stdafx.h"
 #endif
 
 namespace Asam{
@@ -31,15 +31,29 @@ namespace Asam{
 		GLsizei count;
 	};
 
-	class GLRenderSystem{
+	struct 
+
+	class WebGLRenderSystem{
 	public:
-		GLRenderSystem();
-		~GLRenderSystem();
+		static WebGLRenderSystem * GetInstance(){ return s_instance; }
+
+	public:
+		WebGLRenderSystem();
+		~WebGLRenderSystem();
+
+		void SetViewport(const Recti & rect);
+		void SetFrameBuffer()
 
 		void Render(RenderData){
 			
 		}
 
+	private:
+		static WebGLRenderSystem * s_instance;
+		
+
 	};
+
+	typedef WebGLRenderSystem RenderSystem;
 
 }

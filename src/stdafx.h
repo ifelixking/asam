@@ -4,6 +4,7 @@
 #include <list>
 #include <set>
 #include <map>
+#include <assert.h>
 #include <GLES2/gl2.h>
 #include <EGL/egl.h>
 #include <emscripten/html5.h>
@@ -11,3 +12,4 @@
 
 #include "engine/Math/Vector.h"
 #include "engine/Math/Matrix.h"
+#include "engine/Math/Rect.h"

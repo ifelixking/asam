@@ -9,16 +9,23 @@ namespace Asam{
 
 	class Node;
 
+	class OgreRenderQueue{};
+
 	class OgreScene : public Scene{
 	public:
 		OgreScene();
 		~OgreScene();
 
-		void Render();
+		void Render(Camera * camera);
+
+	private:
+		void prepareRenderQueue();
 
 	private:
 		std::vector<Node *> m_nodeList;
-
+		class OgreRenderQueue m_renderQueue;
 	};
+
+	
 
 }
