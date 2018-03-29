@@ -21,7 +21,7 @@ namespace Asam{
 
 		for(auto itor=m_nodeList.begin(); itor!=m_nodeList.end(); ++itor){
 			const Node * node = *itor;
-			if (node->visible())
+			// if (node->visible())
 		}
 
 	}

@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef STDAFX
-#include "../../stdafx.h"
-#endif
+// #ifndef STDAFX
+// #include "../../stdafx.h"
+// #endif
 
-
+#include "Vector.h"
 
 namespace Asam{
 	struct Rectf{

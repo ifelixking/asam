@@ -1,6 +1,6 @@
 #include "../../stdafx.h"
-#include "RenderTarget.h"
 #include "webgl/WebGLRenderSystem.h"
+#include "RenderTarget.h"
 
 namespace Asam{
 
@@ -66,6 +66,7 @@ namespace Asam{
 		assert(m_viewportList.size() > 0);
 		(*m_viewportList.begin())->SetScene(scene);
 	}
+
 
 	// Viewport ====================================================================================================================================================================================================
 

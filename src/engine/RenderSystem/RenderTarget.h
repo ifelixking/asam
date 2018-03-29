@@ -11,7 +11,7 @@ namespace Asam{
 	class Viewport;
 	class Layer;
 
-	class RenderTarget{
+	class RenderTarget {
 	public:
 		RenderTarget();
 		virtual ~RenderTarget();
@@ -20,7 +20,7 @@ namespace Asam{
 		
 		void SetCamera(Camera * camera);
 		void SetScene(Scene * scene);
-
+		
 		class Viewport * CreateViewport();
 		bool DeleteViewport(Viewport * vp);
 
@@ -29,7 +29,7 @@ namespace Asam{
 
 	private:
 		std::vector<class Viewport *> m_viewportList;
-		bool m_isNeedSortViewportList;
+		bool m_isNeedSortViewportList;		
 	};
 
 	class Viewport {
@@ -66,7 +66,7 @@ namespace Asam{
 	private:
 		class Camera * m_camera;
 		class Scene * m_scene;
-		class FrameBuffer * m_frameBuffer;
+		class FrameBuffer * m_frameBuffer;		
 	};
 
 }

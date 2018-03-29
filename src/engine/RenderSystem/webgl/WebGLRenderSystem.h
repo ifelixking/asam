@@ -31,8 +31,10 @@ namespace Asam{
 		GLsizei count;
 	};
 
-	struct 
+	class WebGLFrameBuffer {
 
+	};
+	
 	class WebGLRenderSystem{
 	public:
 		static WebGLRenderSystem * GetInstance(){ return s_instance; }
@@ -42,11 +44,9 @@ namespace Asam{
 		~WebGLRenderSystem();
 
 		void SetViewport(const Recti & rect);
-		void SetFrameBuffer()
+		void SetFrameBuffer(const WebGLFrameBuffer * frameBuffer);
 
-		void Render(RenderData){
-			
-		}
+		void Draw(RenderData);
 
 	private:
 		static WebGLRenderSystem * s_instance;
@@ -55,5 +55,6 @@ namespace Asam{
 	};
 
 	typedef WebGLRenderSystem RenderSystem;
+	typedef WebGLFrameBuffer FrameBuffer;
 
 }

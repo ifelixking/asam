@@ -16,7 +16,7 @@ namespace Asam{
 		OgreScene();
 		~OgreScene();
 
-		void Render(Camera * camera);
+		void Render();
 
 	private:
 		void prepareRenderQueue();

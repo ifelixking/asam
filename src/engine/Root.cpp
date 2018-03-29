@@ -1,11 +1,11 @@
 #include "../stdafx.h"
 #include "Root.h"
+// #include "RenderSystem/webgl/WebGLRenderSystem.cpp"
+#include "RenderSystem/Canvas.h"
 
 namespace Asam {
 
-Root::Root()
-	:m_scene(NULL)
-{
+Root::Root(){
 	
 }
 
@@ -13,10 +13,19 @@ Root::~Root(){
 	
 }
 
-Scene * Root::SetScene(Scene * scene){
-	Scene * oldScene = m_scene;
-	m_scene = scene;
-	return scene;
+void Root::Render(){
+	for(auto itor=m_canvasList.begin(); itor!=m_canvasList.end(); ++itor){
+		Canvas * canvas = *itor;
+		if (canvas->GetActivate()) {
+			canvas->Render();
+		}
+	}
+}
+
+Canvas * Root::CreateCanvas(){
+	Canvas * canvas = new Canvas();
+	m_canvasList.push_back(canvas);
+	return canvas;
 }
 
 }
