@@ -1,9 +1,5 @@
 #pragma once
 
-#ifndef STDAFX
-#include "../../stdafx.h"
-#endif
-
 namespace Asam{
 
 	class Camera;
@@ -15,6 +11,11 @@ namespace Asam{
 	public:
 		RenderTarget();
 		virtual ~RenderTarget();
+
+		// 方便用户手动控制某个Canvas是否渲染, 比如当窗口隐藏, 或被别的窗口完全覆盖时
+		void SetActivated(bool activated) { m_isActivated = activated; }
+		bool GetActivate() const { return m_isActivated; }
+
 
 		void Render() const;
 		
@@ -28,6 +29,7 @@ namespace Asam{
 		void resortViewport();
 
 	private:
+		bool m_isActivated;
 		std::vector<class Viewport *> m_viewportList;
 		bool m_isNeedSortViewportList;		
 	};
@@ -66,7 +68,7 @@ namespace Asam{
 	private:
 		class Camera * m_camera;
 		class Scene * m_scene;
-		class FrameBuffer * m_frameBuffer;		
+		class WebGLFrameBuffer * m_frameBuffer;		
 	};
 
 }

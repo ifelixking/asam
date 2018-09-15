@@ -45,41 +45,43 @@
         {
             "name": "Win32",
             "includePath": [
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libcxx",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libcxxabi/include",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/compat",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SSE",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libc",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libc/musl/arch/emscripten",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/local/include",
-				"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SDL",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libcxx",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libcxxabi/include",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/compat",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SSE",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libc",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libc/musl/arch/emscripten",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/local/include",
+                "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SDL",
                 "${workspaceRoot}"
             ],
             "defines": [
                 "__EMSCRIPTEN__",
                 "__EMSCRIPTEN_major__=1",
                 "__EMSCRIPTEN_minor__=37",
-				"__EMSCRIPTEN_tiny__=32",
-				"_LIBCPP_ABI_VERSION=2"
+                "__EMSCRIPTEN_tiny__=32",
+                "_LIBCPP_ABI_VERSION=2"
             ],
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libcxx",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libcxxabi/include",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/compat",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SSE",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libc",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libc/musl/arch/emscripten",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/local/include",
-					"E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SDL",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libcxx",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libcxxabi/include",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/compat",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SSE",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/libc",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/lib/libc/musl/arch/emscripten",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/local/include",
+                    "E:/project7/emsdk-portable-64bit/emscripten/1.37.35/system/include/SDL",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 3

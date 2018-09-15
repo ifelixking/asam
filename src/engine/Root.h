@@ -2,19 +2,16 @@
 
 namespace Asam {
 
-class Scene;
-class Canvas;
-
 class Root{
 public:
 	Root();
 	~Root();
 
-	class Canvas * CreateCanvas();
+	class HtmlCanvas * CreateCanvas(const char * canvasId);
 	void Render();
 
 private:
-	std::vector<Canvas *> m_canvasList;
+	std::vector<class HtmlCanvas *> m_canvasList;
 };
 
 }

@@ -5,7 +5,8 @@
 namespace Asam{
 
 	RenderTarget::RenderTarget()
-		: m_isNeedSortViewportList(false)
+		: m_isActivated(true)
+		, m_isNeedSortViewportList(false)
 	{
 		Viewport * vp = CreateViewport();
 	}
@@ -34,9 +35,9 @@ namespace Asam{
 	}
 
 	void RenderTarget::resortViewport(){
-		class compare{
-			bool operator()(const Viewport & a, const Viewport & b) const {
-				return a.m_zIndex < b.m_zIndex;
+		struct compare{
+			bool operator()(Viewport * a, Viewport * b) const {
+				return a->m_zIndex < b->m_zIndex;
 			}
 		};
 		std::sort(m_viewportList.begin(), m_viewportList.end(), compare());
@@ -46,15 +47,12 @@ namespace Asam{
 		if (m_isNeedSortViewportList) { ((RenderTarget *)(this))->resortViewport(); }
 		for (auto itorViewport=m_viewportList.rbegin(); itorViewport!=m_viewportList.rend(); ++itorViewport){
 			const Viewport * vp = *itorViewport;
-			RenderSystem::GetInstance()->SetViewport(vp->GetViewportRect());
+			WebGLRenderSystem::GetInstance()->SetViewport(vp->GetViewportRect());
 			for (auto itorLayer=vp->m_layerList.begin(); itorLayer!=vp->m_layerList.end(); ++itorLayer){
 				const Layer * layer = *itorLayer;
-				RenderSystem::GetInstance()->SetFrameBuffer(layer->m_frameBuffer);
+				WebGLRenderSystem::GetInstance()->SetFrameBuffer(layer->m_frameBuffer);
 			}
-			
-
 		}
-
 	}
 
 	void RenderTarget::SetCamera(Camera * camera){

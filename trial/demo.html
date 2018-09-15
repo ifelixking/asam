@@ -5,33 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>ASAM Demo</title>
-	<script src="as.js"></script>
+	<script src="asam.js"></script>
 </head>
 <body>
 	<button onclick="test()">test</button>
-	<button id="callback">callback</button>	
 	<canvas id="canvas1" style="width:320px;height:240px"></canvas>
-	<button onclick="init()">init</button>	
-	<button onclick="draw()">draw</button>
 	<script>
 		Module["onRuntimeInitialized"] = function(){
 			
-			// console.log(Module);
+			
 		}
 
 		function test(){
-			var a = Module["_as_test"]();
-			console.log(a);
+			var ptr = allocate(intArrayFromString("canvas1"), 'i8', ALLOC_NORMAL);
+			Module["_asamCreateApplication"](ptr);
 		}
 
-		function init(){
-			Module["_as_test_render_init"]();
-		}
-
-		function draw(){
-			Module["_as_test_render"]();
-		}
 
 	</script>
 </body>
 </html>
+

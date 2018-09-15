@@ -1,8 +1,6 @@
 #pragma once
 
-#ifndef STDAFX
-#include "../../../stdafx.h"
-#endif
+#include "../RenderTarget.h"
 
 namespace Asam{
 
@@ -34,6 +32,19 @@ namespace Asam{
 	class WebGLFrameBuffer {
 
 	};
+
+	class HtmlCanvas : public RenderTarget{
+	public:
+		// HtmlCanvas();
+		// ~HtmlCanvas();
+		void CreateContext(const char * canvasId);
+		void DestroyContext();
+		void MakeCurrent();
+
+	private:
+		std::string m_canvasId;
+		EMSCRIPTEN_WEBGL_CONTEXT_HANDLE m_glContext;
+	};
 	
 	class WebGLRenderSystem{
 	public:
@@ -43,18 +54,17 @@ namespace Asam{
 		WebGLRenderSystem();
 		~WebGLRenderSystem();
 
-		void SetViewport(const Recti & rect);
+		void SetViewport(const Recti & rect){}
 		void SetFrameBuffer(const WebGLFrameBuffer * frameBuffer);
 
 		void Draw(RenderData);
+
+		HtmlCanvas * CreateHtmlCanvas(const char * canvasId){return nullptr;}
 
 	private:
 		static WebGLRenderSystem * s_instance;
 		
 
 	};
-
-	typedef WebGLRenderSystem RenderSystem;
-	typedef WebGLFrameBuffer FrameBuffer;
 
 }
